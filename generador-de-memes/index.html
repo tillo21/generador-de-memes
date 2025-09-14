@@ -1,0 +1,953 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'; min-height: 16.0px}
+  </style>
+</head>
+<body>
+<p class="p1"><b>&lt;!DOCTYPE html&gt;</b></p>
+<p class="p1"><b>&lt;html lang="es"&gt;</b></p>
+<p class="p1"><b>&lt;head&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">    </span>&lt;title&gt;</b>🎭<b> Meme Maker - Solo Fotos&lt;/title&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">    </span>&lt;style&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>.meme-container {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>position: relative;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>display: block;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>width: 100%;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>padding: 0;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>margin: 0;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>background: transparent;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b><span class="Apple-converted-space">        </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>.meme-image {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>width: 100%;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>height: auto;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>display: block;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>border-radius: 8px;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>object-fit: cover;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>min-height: 350px;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>margin-top: 120px;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>margin-bottom: 10px;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b><span class="Apple-converted-space">        </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>.meme-wrapper {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>position: relative;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>width: 100%;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>min-height: 500px;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>border-radius: 12px;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>overflow: hidden;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>padding: 20px;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>display: flex;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>flex-direction: column;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b><span class="Apple-converted-space">        </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>.speech-bubble {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>position: absolute;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>background: white;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>border: 3px solid #000;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>border-radius: 20px;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>padding: 8px 12px;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>font-family: 'Comic Sans MS', cursive, sans-serif;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>font-weight: bold;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>font-size: clamp(10px, 1.8vw, 16px);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>line-height: 1.2;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>color: #000;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>word-wrap: break-word;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>box-shadow: 3px 3px 6px rgba(0,0,0,0.4);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>z-index: 10;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>animation: popIn 0.3s ease-out;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>max-width: min(200px, 35%);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>min-width: 100px;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b><span class="Apple-converted-space">        </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>@keyframes popIn {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>0% { transform: scale(0.8); opacity: 0; }</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>100% { transform: scale(1); opacity: 1; }</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b><span class="Apple-converted-space">        </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>.speech-bubble.with-tail::after {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>content: '';</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>position: absolute;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>width: 0;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>height: 0;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>border: 15px solid transparent;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>border-top-color: white;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>border-top-width: 18px;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>border-bottom-width: 0;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b><span class="Apple-converted-space">        </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>.bubble-left {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>left: 5%;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>top: 20px;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b><span class="Apple-converted-space">        </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>.bubble-left.with-tail::after {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>top: 100%;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>left: 35%;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>border-left-width: 0;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>border-right-width: 18px;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b><span class="Apple-converted-space">        </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>.bubble-right {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>right: 5%;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>top: 55px;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b><span class="Apple-converted-space">        </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>.bubble-right.with-tail::after {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>top: 100%;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>right: 35%;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>border-right-width: 0;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>border-left-width: 18px;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b><span class="Apple-converted-space">        </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>.api-config {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>color: white;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>padding: 20px;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>border-radius: 12px;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>margin-bottom: 20px;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b><span class="Apple-converted-space">        </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>.config-toggle {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>cursor: pointer;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>user-select: none;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b><span class="Apple-converted-space">        </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>.checkbox-custom {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>appearance: none;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>width: 20px;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>height: 20px;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>border: 2px solid #5D5CDE;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>border-radius: 4px;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>position: relative;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>cursor: pointer;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>transition: all 0.2s;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b><span class="Apple-converted-space">        </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>.checkbox-custom:checked {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>background: #5D5CDE;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>transform: scale(1.1);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b><span class="Apple-converted-space">        </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>.checkbox-custom:checked::after {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>content: '✓';</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>position: absolute;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>color: white;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>font-size: 14px;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>font-weight: bold;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>top: -2px;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>left: 2px;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b><span class="Apple-converted-space">        </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>.drag-over {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>border-color: #5D5CDE;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>background-color: rgba(93, 92, 222, 0.1);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b><span class="Apple-converted-space">        </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>.api-status {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>font-size: 12px;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>margin-top: 5px;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>padding: 3px 8px;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>border-radius: 4px;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b><span class="Apple-converted-space">        </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>.api-status.connected {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>background: rgba(34, 197, 94, 0.2);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>color: rgb(34, 197, 94);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b><span class="Apple-converted-space">        </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>.api-status.disconnected {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>background: rgba(239, 68, 68, 0.2);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>color: rgb(239, 68, 68);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b><span class="Apple-converted-space">        </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>@media (max-width: 768px) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>.speech-bubble {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>max-width: min(180px, 45%);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>font-size: clamp(10px, 3vw, 16px);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>}</b></p>
+<p class="p2"><b><span class="Apple-converted-space">            </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>.bubble-left {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>left: 2%;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>top: 10px;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>}</b></p>
+<p class="p2"><b><span class="Apple-converted-space">            </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>.bubble-right {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>right: 2%;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>top: 35px;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>}</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p1"><b><span class="Apple-converted-space">    </span>&lt;/style&gt;</b></p>
+<p class="p1"><b>&lt;/head&gt;</b></p>
+<p class="p1"><b>&lt;body class="bg-white dark:bg-gray-900 min-h-screen transition-colors duration-200"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">    </span>&lt;div class="container mx-auto px-4 py-8 max-w-6xl"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>&lt;!-- Header --&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>&lt;div class="text-center mb-8"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;h1 class="text-5xl font-bold text-gray-900 dark:text-white mb-3"&gt;</b>🎭<b> Meme Maker&lt;/h1&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;p class="text-lg text-gray-600 dark:text-gray-400"&gt;Versión Solo Fotos - Estable y Rápida&lt;/p&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;div class="mt-4 p-3 bg-green-100 dark:bg-green-900 border border-green-400 dark:border-green-700 text-green-700 dark:text-green-300 rounded-lg inline-block"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span></b>✅<b> App optimizada solo para fotos subidas - Sin problemas de generación</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>&lt;/div&gt;</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>&lt;!-- API Configuration --&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>&lt;div class="api-config"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;div class="config-toggle flex items-center justify-between" onclick="toggleApiConfig()"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;h3 class="text-xl font-bold"&gt;</b>⚙️<b> Configuración de APIs&lt;/h3&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;span id="configIcon"&gt;</b>🔽<b>&lt;/span&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;div id="apiConfigPanel" class="mt-4 space-y-4 hidden"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;label class="block text-sm font-medium mb-2"&gt;OpenAI API Key (GPT-4o):&lt;/label&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;input type="password" id="openaiKey" placeholder="sk-..." class="w-full px-3 py-2 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/70"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;div id="openaiStatus" class="api-status disconnected"&gt;</b>❌<b> No configurada&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;label class="block text-sm font-medium mb-2"&gt;Anthropic API Key (Claude) - Opcional:&lt;/label&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;input type="password" id="anthropicKey" placeholder="sk-ant-..." class="w-full px-3 py-2 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/70"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;div id="anthropicStatus" class="api-status disconnected"&gt;</b>❌<b> No configurada&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;div class="text-sm opacity-80"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span></b>🔒<b> Las claves se almacenan solo en memoria. Solo necesitas una API key para funcionar.</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;a href="#" onclick="showApiHelp()" class="underline"&gt;¿Cómo obtener las APIs?&lt;/a&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>&lt;/div&gt;</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>&lt;!-- Upload Area --&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>&lt;div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 mb-8"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;span class="mr-3"&gt;</b>📸<b>&lt;/span&gt; Paso 1: Subir tu Imagen</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;/h2&gt;</b></p>
+<p class="p2"><b><span class="Apple-converted-space">            </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;div class="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-8 text-center cursor-pointer hover:border-gray-400 dark:hover:border-gray-500 transition-colors" id="uploadArea"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;div id="uploadPrompt"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;svg class="mx-auto h-12 w-12 text-gray-400 dark:text-gray-500 mb-4" stroke="currentColor" fill="none" viewBox="0 0 48 48"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 515.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;/svg&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600 dark:text-gray-400 mb-2"&gt;Arrastra una imagen aquí o haz clic para seleccionar&lt;/p&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;p class="text-sm text-gray-500 dark:text-gray-500"&gt;PNG, JPG, GIF hasta 10MB&lt;/p&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;div id="imagePreview" class="hidden"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;img id="previewImg" class="max-w-full max-h-64 mx-auto rounded-lg shadow-md" alt="Vista previa"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600 dark:text-gray-400 mt-4"&gt;</b>✅<b> Imagen cargada perfectamente&lt;/p&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;input type="file" id="fileInput" accept="image/*" class="hidden"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>&lt;/div&gt;</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>&lt;!-- Theme Section --&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>&lt;div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 mb-8"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;span class="mr-3"&gt;</b>💭<b>&lt;/span&gt; Paso 2: Tema del Meme</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;/h2&gt;</b></p>
+<p class="p2"><b><span class="Apple-converted-space">            </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;div class="mb-4"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>Describe el tema o situación para tu meme</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;/label&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;textarea<span class="Apple-converted-space"> </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>id="themeInput"<span class="Apple-converted-space"> </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>rows="3"<span class="Apple-converted-space"> </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>class="w-full px-4 py-3 text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#5D5CDE] focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>placeholder="Ejemplo: conversación divertida entre dos personas..."</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&gt;Conversación divertida entre dos personas&lt;/textarea&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;/div&gt;</b></p>
+<p class="p2"><b><span class="Apple-converted-space">            </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 md:grid-cols-3 gap-4"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;button class="p-3 border border-gray-300 dark:border-gray-600 rounded-lg text-left hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" onclick="setTheme('</b>💼<b> Trabajo/Oficina')"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;div class="font-medium text-gray-900 dark:text-white"&gt;</b>💼<b> Trabajo/Oficina&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;div class="text-sm text-gray-500 dark:text-gray-400"&gt;Situaciones laborales&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;/button&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;button class="p-3 border border-gray-300 dark:border-gray-600 rounded-lg text-left hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" onclick="setTheme('</b>🎮<b> Tecnología')"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;div class="font-medium text-gray-900 dark:text-white"&gt;</b>🎮<b> Tecnología&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;div class="text-sm text-gray-500 dark:text-gray-400"&gt;Tech y gaming&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;/button&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;button class="p-3 border border-gray-300 dark:border-gray-600 rounded-lg text-left hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" onclick="setTheme('</b>😄<b> Vida cotidiana')"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;div class="font-medium text-gray-900 dark:text-white"&gt;</b>😄<b> Vida cotidiana&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;div class="text-sm text-gray-500 dark:text-gray-400"&gt;Situaciones diarias&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;/button&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>&lt;/div&gt;</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>&lt;!-- Style Selection --&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>&lt;div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 mb-8"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;span class="mr-3"&gt;</b>🎭<b>&lt;/span&gt; Paso 3: Estilo de Humor</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;/h2&gt;</b></p>
+<p class="p2"><b><span class="Apple-converted-space">            </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-2 md:grid-cols-4 gap-4"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;label class="flex items-center p-3 border border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;input type="checkbox" class="checkbox-custom mr-3" value="sarcastic" checked&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;div class="font-medium text-gray-900 dark:text-white"&gt;</b>😏<b> Sarcástico&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;div class="text-xs text-gray-500 dark:text-gray-400"&gt;Ironía y sarcasmo&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;/label&gt;</b></p>
+<p class="p2"><b><span class="Apple-converted-space">                </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;label class="flex items-center p-3 border border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;input type="checkbox" class="checkbox-custom mr-3" value="funny" checked&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;div class="font-medium text-gray-900 dark:text-white"&gt;</b>🤣<b> Divertido&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;div class="text-xs text-gray-500 dark:text-gray-400"&gt;Humor clásico&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;/label&gt;</b></p>
+<p class="p2"><b><span class="Apple-converted-space">                </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;label class="flex items-center p-3 border border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;input type="checkbox" class="checkbox-custom mr-3" value="ironic"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;div class="font-medium text-gray-900 dark:text-white"&gt;</b>🙃<b> Irónico&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;div class="text-xs text-gray-500 dark:text-gray-400"&gt;Ironía situacional&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;/label&gt;</b></p>
+<p class="p2"><b><span class="Apple-converted-space">                </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;label class="flex items-center p-3 border border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;input type="checkbox" class="checkbox-custom mr-3" value="wholesome"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;div class="font-medium text-gray-900 dark:text-white"&gt;</b>🥰<b> Positivo&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;div class="text-xs text-gray-500 dark:text-gray-400"&gt;Humor tierno&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;/label&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>&lt;/div&gt;</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>&lt;!-- Advanced Settings --&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>&lt;div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 mb-8"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;span class="mr-3"&gt;</b>⚙️<b>&lt;/span&gt; Paso 4: Configuración</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;/h2&gt;</b></p>
+<p class="p2"><b><span class="Apple-converted-space">            </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 md:grid-cols-3 gap-6"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>Número de personajes</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;/label&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;select id="characterCount" class="w-full px-3 py-2 text-base border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;option value="2"&gt;2 personajes&lt;/option&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;option value="1"&gt;1 personaje&lt;/option&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;option value="3"&gt;3 personajes&lt;/option&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;/select&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;/div&gt;</b></p>
+<p class="p2"><b><span class="Apple-converted-space">                </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>Idioma</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;/label&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;select id="language" class="w-full px-3 py-2 text-base border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;option value="es"&gt;Español&lt;/option&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;option value="en"&gt;English&lt;/option&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;option value="fr"&gt;Français&lt;/option&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;/select&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;/div&gt;</b></p>
+<p class="p2"><b><span class="Apple-converted-space">                </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>Intensidad del humor</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;/label&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;select id="humorIntensity" class="w-full px-3 py-2 text-base border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;option value="medium"&gt;Media </b>😊<b>&lt;/option&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;option value="high"&gt;Alta </b>🔥<b>&lt;/option&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;option value="mild"&gt;Suave </b>😌<b>&lt;/option&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;/select&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>&lt;/div&gt;</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>&lt;!-- Generate Button --&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>&lt;div class="text-center mb-8"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;button id="generateBtn" class="px-12 py-4 bg-[#5D5CDE] hover:bg-[#4A4BC4] text-white rounded-lg text-xl font-bold transition-all duration-200 transform hover:scale-105"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;span class="mr-2"&gt;</b>🎭<b>&lt;/span&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>Generar Memes Épicos</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;/button&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>&lt;/div&gt;</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>&lt;!-- Results Section --&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>&lt;div id="resultsSection" class="hidden"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center"&gt;</b>🎨<b> Memes Generados&lt;/h2&gt;</b></p>
+<p class="p2"><b><span class="Apple-converted-space">            </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;!-- Loading State --&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;div id="loadingState" class="text-center py-12"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;div class="inline-block animate-spin rounded-full h-16 w-16 border-b-4 border-[#5D5CDE] mb-6"&gt;&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;p id="loadingMessage" class="text-xl text-gray-600 dark:text-gray-400 mb-4"&gt;Generando memes épicos...&lt;/p&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;div class="max-w-md mx-auto space-y-3"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;div id="claudeStatus" class="flex items-center justify-between p-3 bg-gray-100 dark:bg-gray-700 rounded-lg"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;span class="font-medium"&gt;</b>🧠<b> Claude Sonnet-4&lt;/span&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;span class="text-sm text-gray-500"&gt;Esperando...&lt;/span&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;div id="gptStatus" class="flex items-center justify-between p-3 bg-gray-100 dark:bg-gray-700 rounded-lg"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;span class="font-medium"&gt;</b>⚡<b> GPT-4o&lt;/span&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;span class="text-sm text-gray-500"&gt;Esperando...&lt;/span&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;/div&gt;</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;!-- Memes Grid --&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;div id="memesGrid" class="hidden grid grid-cols-1 lg:grid-cols-2 gap-12"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;!-- Claude Memes --&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;div class="space-y-8"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;div class="text-center"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;h3 class="text-2xl font-bold text-gray-900 dark:text-white flex items-center justify-center"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                            </span>&lt;span class="mr-2"&gt;</b>🧠<b>&lt;/span&gt; Claude Sonnet-4</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;/h3&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;div id="claudeMeme1" class="meme-result hidden"&gt;&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;div id="claudeMeme2" class="meme-result hidden"&gt;&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;/div&gt;</b></p>
+<p class="p2"><b><span class="Apple-converted-space">                </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;!-- GPT Memes --&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;div class="space-y-8"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;div class="text-center"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;h3 class="text-2xl font-bold text-gray-900 dark:text-white flex items-center justify-center"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                            </span>&lt;span class="mr-2"&gt;</b>⚡<b>&lt;/span&gt; GPT-4o</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;/h3&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;div id="gptMeme1" class="meme-result hidden"&gt;&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;div id="gptMeme2" class="meme-result hidden"&gt;&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>&lt;/div&gt;</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>&lt;!-- Error Display --&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>&lt;div id="errorMessage" class="hidden mt-6 p-4 bg-red-100 dark:bg-red-900 border border-red-400 dark:border-red-700 text-red-700 dark:text-red-300 rounded-lg"&gt;&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">    </span>&lt;/div&gt;</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">    </span>&lt;!-- API Help Modal --&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">    </span>&lt;div id="apiHelpModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>&lt;div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg max-w-md w-full mx-4"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4"&gt;</b>🔑<b> Cómo obtener las APIs&lt;/h3&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;div class="space-y-4 text-sm text-gray-700 dark:text-gray-300"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;strong&gt;OpenAI API:&lt;/strong&gt;&lt;br&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>1. Ir a &lt;a href="https://platform.openai.com" target="_blank" class="text-blue-500"&gt;platform.openai.com&lt;/a&gt;&lt;br&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>2. Crear cuenta → API Keys&lt;br&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>3. Create new secret key&lt;br&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>4. Añadir $5-20 de créditos</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;strong&gt;Anthropic API:&lt;/strong&gt;&lt;br&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>1. Ir a &lt;a href="https://console.anthropic.com" target="_blank" class="text-blue-500"&gt;console.anthropic.com&lt;/a&gt;&lt;br&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>2. Crear cuenta → API Keys&lt;br&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>3. Create Key&lt;br&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>4. Añadir $5-20 de créditos</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;button onclick="closeApiHelp()" class="mt-4 px-4 py-2 bg-[#5D5CDE] text-white rounded hover:bg-[#4A4BC4]"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>Entendido</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;/button&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">    </span>&lt;/div&gt;</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">    </span>&lt;script&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>// Dark mode detection</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>if (window.matchMedia &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>document.documentElement.classList.add('dark');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event =&gt; {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>if (event.matches) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>document.documentElement.classList.add('dark');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>} else {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>document.documentElement.classList.remove('dark');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>}</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>});</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>// Global variables</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>let selectedFile = null;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>let selectedImageBase64 = null;</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>// Elements</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const uploadArea = document.getElementById('uploadArea');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const fileInput = document.getElementById('fileInput');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const uploadPrompt = document.getElementById('uploadPrompt');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const imagePreview = document.getElementById('imagePreview');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const previewImg = document.getElementById('previewImg');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const themeInput = document.getElementById('themeInput');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const generateBtn = document.getElementById('generateBtn');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const resultsSection = document.getElementById('resultsSection');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const loadingState = document.getElementById('loadingState');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const memesGrid = document.getElementById('memesGrid');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const errorMessage = document.getElementById('errorMessage');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const claudeStatus = document.getElementById('claudeStatus');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const gptStatus = document.getElementById('gptStatus');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const loadingMessage = document.getElementById('loadingMessage');</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>// API status elements</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const openaiStatus = document.getElementById('openaiStatus');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const anthropicStatus = document.getElementById('anthropicStatus');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const openaiKeyInput = document.getElementById('openaiKey');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const anthropicKeyInput = document.getElementById('anthropicKey');</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>// Helper function to get current API keys</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>function getCurrentApiKeys() {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>return {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>openai: openaiKeyInput.value.trim(),</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>anthropic: anthropicKeyInput.value.trim()</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>};</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>// Update API status indicators</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>function updateApiStatus() {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const keys = getCurrentApiKeys();</b></p>
+<p class="p2"><b><span class="Apple-converted-space">            </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>// Update OpenAI status</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>if (keys.openai &amp;&amp; keys.openai.length &gt; 10) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>openaiStatus.textContent = '</b>✅<b> Configurada';</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>openaiStatus.className = 'api-status connected';</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>} else {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>openaiStatus.textContent = '</b>❌<b> No configurada';</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>openaiStatus.className = 'api-status disconnected';</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>}</b></p>
+<p class="p2"><b><span class="Apple-converted-space">            </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>// Update Anthropic status</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>if (keys.anthropic &amp;&amp; keys.anthropic.length &gt; 10) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>anthropicStatus.textContent = '</b>✅<b> Configurada';</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>anthropicStatus.className = 'api-status connected';</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>} else {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>anthropicStatus.textContent = '</b>❌<b> No configurada';</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>anthropicStatus.className = 'api-status disconnected';</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>}</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>// Add real-time listeners to API key inputs</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>openaiKeyInput.addEventListener('input', updateApiStatus);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>anthropicKeyInput.addEventListener('input', updateApiStatus);</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>// Theme setting helper</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>function setTheme(theme) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>themeInput.value = theme;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>// API Configuration</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>function toggleApiConfig() {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const panel = document.getElementById('apiConfigPanel');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const icon = document.getElementById('configIcon');</b></p>
+<p class="p2"><b><span class="Apple-converted-space">            </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>if (panel.classList.contains('hidden')) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>panel.classList.remove('hidden');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>icon.textContent = '</b>🔼<b>';</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>} else {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>panel.classList.add('hidden');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>icon.textContent = '</b>🔽<b>';</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>}</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>function showApiHelp() {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>document.getElementById('apiHelpModal').classList.remove('hidden');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>function closeApiHelp() {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>document.getElementById('apiHelpModal').classList.add('hidden');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>// File upload handling</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>uploadArea.addEventListener('click', () =&gt; fileInput.click());</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>uploadArea.addEventListener('dragover', handleDragOver);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>uploadArea.addEventListener('drop', handleDrop);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>uploadArea.addEventListener('dragleave', handleDragLeave);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>fileInput.addEventListener('change', handleFileSelect);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>generateBtn.addEventListener('click', generateMemes);</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>function handleDragOver(e) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>e.preventDefault();</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>uploadArea.classList.add('drag-over');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>function handleDragLeave(e) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>e.preventDefault();</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>uploadArea.classList.remove('drag-over');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>function handleDrop(e) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>e.preventDefault();</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>uploadArea.classList.remove('drag-over');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const files = e.dataTransfer.files;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>if (files.length &gt; 0) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>handleFile(files[0]);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>}</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>function handleFileSelect(e) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>if (e.target.files.length &gt; 0) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>handleFile(e.target.files[0]);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>}</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>function handleFile(file) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>if (!file.type.startsWith('image/')) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>showError('Por favor selecciona un archivo de imagen válido.');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>return;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>}</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>if (file.size &gt; 10 * 1024 * 1024) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>showError('El archivo es demasiado grande. El tamaño máximo es 10MB.');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>return;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>}</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>selectedFile = file;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const reader = new FileReader();</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>reader.onload = (e) =&gt; {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>selectedImageBase64 = e.target.result;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>previewImg.src = e.target.result;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>uploadPrompt.classList.add('hidden');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>imagePreview.classList.remove('hidden');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>};</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>reader.readAsDataURL(file);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>// AI API Functions - Simplified and more robust</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>async function callOpenAI(prompt, imageBase64) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const keys = getCurrentApiKeys();</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>if (!keys.openai || keys.openai.length &lt; 10) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>throw new Error('OpenAI API key not configured');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>}</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>console.log('Calling OpenAI API...');</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const response = await fetch('https://api.openai.com/v1/chat/completions', {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>method: 'POST',</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>headers: {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>'Authorization': `Bearer ${keys.openai}`,</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>'Content-Type': 'application/json'</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>},</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>body: JSON.stringify({</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>model: "gpt-4o",</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>messages: [{</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>role: "user",</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>content: [</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                            </span>{</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                                </span>type: "text",</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                                </span>text: prompt</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                            </span>},</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                            </span>{</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                                </span>type: "image_url",</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                                </span>image_url: {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                                    </span>url: imageBase64</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                                </span>}</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                            </span>}</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>]</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>}],</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>max_tokens: 300,</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>temperature: 0.8</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>})</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>});</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>if (!response.ok) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>const error = await response.json();</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>console.error('OpenAI Error:', error);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>throw new Error(`OpenAI API Error: ${error.error?.message || 'Unknown error'}`);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>}</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const data = await response.json();</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>console.log('OpenAI response received successfully');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>return data.choices[0].message.content;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>async function callClaude(prompt, imageBase64) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const keys = getCurrentApiKeys();</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>if (!keys.anthropic || keys.anthropic.length &lt; 10) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>throw new Error('Anthropic API key not configured');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>}</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>console.log('Calling Claude API...');</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const base64Data = imageBase64.split(',')[1];</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const mimeType = imageBase64.split(';')[0].split(':')[1];</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const response = await fetch('https://api.anthropic.com/v1/messages', {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>method: 'POST',</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>headers: {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>'x-api-key': keys.anthropic,</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>'Content-Type': 'application/json',</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>'anthropic-version': '2023-06-01'</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>},</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>body: JSON.stringify({</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>model: "claude-3-5-sonnet-20241022",</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>max_tokens: 300,</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>messages: [{</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>role: "user",</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>content: [</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                            </span>{</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                                </span>type: "image",</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                                </span>source: {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                                    </span>type: "base64",</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                                    </span>media_type: mimeType,</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                                    </span>data: base64Data</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                                </span>}</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                            </span>},</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                            </span>{</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                                </span>type: "text",</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                                </span>text: prompt</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                            </span>}</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>]</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>}]</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>})</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>});</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>if (!response.ok) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>const error = await response.json();</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>console.error('Claude Error:', error);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>throw new Error(`Claude API Error: ${error.error?.message || 'Unknown error'}`);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>}</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const data = await response.json();</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>console.log('Claude response received successfully');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>return data.content[0].text;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>// Main meme generation function</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>async function generateMemes() {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const keys = getCurrentApiKeys();</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>// Check that we have an image</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>if (!selectedImageBase64) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>showError('Por favor selecciona una imagen primero.');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>return;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>}</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>// Check that we have at least one API key</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>if ((!keys.openai || keys.openai.length &lt; 10) &amp;&amp; (!keys.anthropic || keys.anthropic.length &lt; 10)) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>showError('Por favor configura al menos una API key en la sección de configuración.');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>return;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>}</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>resultsSection.classList.remove('hidden');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>loadingState.classList.remove('hidden');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>memesGrid.classList.add('hidden');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>errorMessage.classList.add('hidden');</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>// Build prompt with safe, generic terms</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const theme = themeInput.value.trim() || "conversación divertida";</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const styles = Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(cb =&gt; cb.value);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const styleText = styles.length &gt; 0 ? ` Estilo: ${styles.join(', ')}` : '';</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const characters = document.getElementById('characterCount').value;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const language = document.getElementById('language').value;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const intensity = document.getElementById('humorIntensity').value;</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>// Safe, generic prompt that avoids content policy issues</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const prompt = `Basándote en esta imagen, crea un diálogo divertido entre ${characters} personajes sobre: ${theme}.<span class="Apple-converted-space"> </span></b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b>Formato requerido: PERSONAJE_1: texto | PERSONAJE_2: texto</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b>Características del diálogo:</b></p>
+<p class="p1"><b>- ${styleText}</b></p>
+<p class="p1"><b>- Intensidad: ${intensity}</b></p>
+<p class="p1"><b>- Idioma: ${language}</b></p>
+<p class="p1"><b>- Mantén el humor apropiado y creativo</b></p>
+<p class="p1"><b>- Solo responde con el diálogo, sin explicaciones adicionales</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b>Ejemplo de formato: "Persona A: ¡Esto es increíble! | Persona B: ¡Totalmente de acuerdo!"`;</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>try {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>const promises = [];</b></p>
+<p class="p2"><b><span class="Apple-converted-space">                </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>if (keys.anthropic &amp;&amp; keys.anthropic.length &gt; 10) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>updateBotStatus('claude', 'Generando memes...');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>promises.push(</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>generateMemeFromAPI('claude', prompt, selectedImageBase64, 1),</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>generateMemeFromAPI('claude', prompt, selectedImageBase64, 2)</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>}</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>if (keys.openai &amp;&amp; keys.openai.length &gt; 10) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>updateBotStatus('gpt', 'Generando memes...');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>promises.push(</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>generateMemeFromAPI('openai', prompt, selectedImageBase64, 1),</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>generateMemeFromAPI('openai', prompt, selectedImageBase64, 2)</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>}</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>if (promises.length === 0) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>showError('No hay APIs válidas configuradas para generar memes.');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>return;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>}</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>await Promise.allSettled(promises);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>displayResults();</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>} catch (error) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>console.error('Error in generateMemes:', error);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>showError(`Error generando memes: ${error.message}`);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>}</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>async function generateMemeFromAPI(api, prompt, imageBase64, index) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>try {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>let content;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>if (api === 'claude') {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>content = await callClaude(prompt, imageBase64);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>displayMeme(`claudeMeme${index}`, { content, status: 'complete' }, 'Claude Sonnet-4');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>updateBotStatus('claude', '</b>✅<b> Completado');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>} else {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>content = await callOpenAI(prompt, imageBase64);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>displayMeme(`gptMeme${index}`, { content, status: 'complete' }, 'GPT-4o');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>updateBotStatus('gpt', '</b>✅<b> Completado');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>}</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>} catch (error) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>console.error(`Error with ${api}:`, error);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>if (api === 'claude') {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>displayMeme(`claudeMeme${index}`, { content: '', status: 'error' }, 'Claude Sonnet-4');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>updateBotStatus('claude', '</b>❌<b> Error');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>} else {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>displayMeme(`gptMeme${index}`, { content: '', status: 'error' }, 'GPT-4o');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>updateBotStatus('gpt', '</b>❌<b> Error');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>}</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>}</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>function displayResults() {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>loadingState.classList.add('hidden');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>memesGrid.classList.remove('hidden');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>function updateBotStatus(bot, message) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const statusElement = bot === 'claude' ? claudeStatus : gptStatus;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const statusSpan = statusElement.querySelector('span:last-child');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>statusSpan.textContent = message;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>function displayMeme(containerId, response, botName) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const container = document.getElementById(containerId);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>container.classList.remove('hidden');</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>if (response.status === 'error') {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>container.innerHTML = `</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;div class="p-6 bg-red-100 dark:bg-red-900 border-2 border-red-400 dark:border-red-700 text-red-700 dark:text-red-300 rounded-lg"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;div class="text-center"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                            </span>&lt;div class="text-2xl mb-2"&gt;</b>❌<b>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                            </span>&lt;p class="font-medium"&gt;Error generando meme&lt;/p&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                            </span>&lt;p class="text-sm mt-1"&gt;Verifica tu API key&lt;/p&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>`;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>return;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>}</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const memeText = parseMemeText(response.content);</b></p>
+<p class="p2"><b><span class="Apple-converted-space">            </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>container.innerHTML = `</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;div class="bg-white dark:bg-gray-800 rounded-xl shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-200"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;div class="meme-wrapper"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;div class="meme-container"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                            </span>&lt;img src="${selectedImageBase64}" alt="Meme" class="meme-image"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                            </span>&lt;div class="speech-bubble bubble-left with-tail"&gt;${memeText.left}&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                            </span>&lt;div class="speech-bubble bubble-right with-tail"&gt;${memeText.right}&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;div class="p-4 bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-700 dark:to-gray-800"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;div class="flex items-center justify-between"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                            </span>&lt;p class="text-sm text-gray-600 dark:text-gray-400"&gt;Generado por ${botName}&lt;/p&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                            </span>&lt;div class="flex space-x-2"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                                </span>&lt;button class="px-3 py-1 bg-[#5D5CDE] text-white rounded-full text-xs hover:bg-[#4A4BC4] transition-colors" onclick="toggleTails(this)"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                                    </span></b>🎯<b> Toggle Puntas</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                                </span>&lt;/button&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                                </span>&lt;button class="px-3 py-1 bg-green-500 text-white rounded-full text-xs hover:bg-green-600 transition-colors" onclick="downloadMeme(this)"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                                    </span></b>💾<b> Descargar</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                                </span>&lt;/button&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                            </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>`;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>function parseMemeText(content) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>// Clean the content first</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const cleanContent = content.replace(/```|`/g, '').trim();</b></p>
+<p class="p2"><b><span class="Apple-converted-space">            </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>// Look for dialogue format: PERSONAJE_1: texto | PERSONAJE_2: texto</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const match = cleanContent.match(/([^:]+):\s*([^|]+)\s*\|\s*([^:]+):\s*(.+)/);</b></p>
+<p class="p2"><b><span class="Apple-converted-space">            </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>if (match) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>return {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>left: match[2].trim(),</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>right: match[4].trim()</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>};</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>}</b></p>
+<p class="p2"><b><span class="Apple-converted-space">            </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>// Alternative format: just text | text</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const simpleMatch = cleanContent.match(/([^|]+)\s*\|\s*([^|]+)/);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>if (simpleMatch) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>return {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>left: simpleMatch[1].trim(),</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>right: simpleMatch[2].trim()</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>};</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>}</b></p>
+<p class="p2"><b><span class="Apple-converted-space">            </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>// Fallback: split content in half</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const words = cleanContent.split(' ');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const midpoint = Math.ceil(words.length / 2);</b></p>
+<p class="p2"><b><span class="Apple-converted-space">            </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>return {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>left: words.slice(0, midpoint).join(' '),</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>right: words.slice(midpoint).join(' ')</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>};</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>function toggleTails(button) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const memeContainer = button.closest('.bg-white').querySelector('.meme-container');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const bubbles = memeContainer.querySelectorAll('.speech-bubble');</b></p>
+<p class="p2"><b><span class="Apple-converted-space">            </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>bubbles.forEach(bubble =&gt; {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>if (bubble.classList.contains('with-tail')) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>bubble.classList.remove('with-tail');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>bubble.classList.add('no-tail');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>} else {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>bubble.classList.remove('no-tail');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>bubble.classList.add('with-tail');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>}</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>});</b></p>
+<p class="p2"><b><span class="Apple-converted-space">            </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const isWithTail = bubbles[0].classList.contains('with-tail');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>button.textContent = isWithTail ? '</b>🎯<b> Quitar Puntas' : '</b>🎯<b> Agregar Puntas';</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>function downloadMeme(button) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const memeWrapper = button.closest('.bg-white').querySelector('.meme-wrapper');</b></p>
+<p class="p2"><b><span class="Apple-converted-space">            </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>// Create canvas to convert to image</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>html2canvas(memeWrapper, {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>scale: 2,</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>useCORS: true,</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>allowTaint: true</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>}).then(canvas =&gt; {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>const link = document.createElement('a');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>link.download = `meme-${Date.now()}.png`;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>link.href = canvas.toDataURL();</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>link.click();</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>}).catch(err =&gt; {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>console.error('Error downloading meme:', err);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>showError('Error al descargar el meme. Intenta hacer captura de pantalla.');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>});</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>function showError(message) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>errorMessage.textContent = message;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>errorMessage.classList.remove('hidden');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>setTimeout(() =&gt; {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>errorMessage.classList.add('hidden');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>}, 5000);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>// Initialize on page load</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>document.addEventListener('DOMContentLoaded', function() {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>updateApiStatus();</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>console.log('Meme Maker v1.0 initialized - Photo upload only');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>});</b></p>
+<p class="p1"><b><span class="Apple-converted-space">    </span>&lt;/script&gt;</b></p>
+<p class="p2"><b><span class="Apple-converted-space">    </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">    </span>&lt;!-- HTML2Canvas for download functionality --&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">    </span>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"&gt;&lt;/script&gt;</b></p>
+<p class="p1"><b>&lt;/body&gt;</b></p>
+<p class="p1"><b>&lt;/html&gt;</b><b></b></p>
+</body>
+</html>
